@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>面试助手</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+</head>
+<body>
+    <div class="app">
+        <!-- 顶部栏 -->
+        <header class="top-bar">
+            <div class="logo">
+                <span class="hand-icon">✏️</span>
+                <span class="logo-text">面试助手</span>
+            </div>
+            <div class="status-bar">
+                <span class="status-dot" id="statusDot"></span>
+                <span class="status-text" id="statusText">就绪</span>
+            </div>
+        </header>
+
+        <!-- 主内容区 -->
+        <main class="main-container">
+            <!-- 左侧：文字输入区域 -->
+            <section class="panel panel-left">
+                <div class="panel-header">
+                    <span class="hand-icon">⌨️</span>
+                    <h2>文字输入</h2>
+                </div>
+                
+                <!-- 上方：AI返回内容 -->
+                <div class="content-area" id="textContentArea">
+                    <div class="empty-state">
+                        <span class="hand-icon big">📝</span>
+                        <p>输入面试问题，AI为你解答</p>
+                    </div>
+                </div>
+
+                <!-- 下方：文字输入 -->
+                <div class="input-area">
+                    <textarea 
+                        id="manualInput" 
+                        placeholder="输入面试问题，回车发送..."
+                        rows="3"
+                    ></textarea>
+                    <button class="btn-send" id="sendBtn">
+                        <span class="hand-icon">➤</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- 右侧：语音输入区域 -->
+            <section class="panel panel-right">
+                <div class="panel-header">
+                    <span class="hand-icon">🎤</span>
+                    <h2>语音输入</h2>
+                </div>
+                
+                <!-- 上方：AI返回内容 -->
+                <div class="content-area" id="voiceContentArea">
+                    <div class="empty-state">
+                        <span class="hand-icon big">🎙️</span>
+                        <p>点击麦克风，开始语音提问</p>
+                    </div>
+                </div>
+
+                <!-- 下方：语音输入 -->
+                <div class="voice-control">
+                    <div class="voice-display" id="voiceDisplay">
+                        <span class="voice-hint">点击麦克风开始说话...</span>
+                    </div>
+                    <button class="btn-mic" id="micBtn">
+                        <span class="hand-icon mic-icon">🎤</span>
+                    </button>
+                </div>
+            </section>
+        </main>
+
+        <!-- 底部信息 -->
+        <footer class="footer">
+            <span class="hand-icon">⚡</span>
+            <span>AI 面试助手 - 流式响应 · 极速体验</span>
+        </footer>
+    </div>
+
+    <!-- 错误提示 -->
+    <div class="toast" id="toast" style="display: none;">
+        <span class="hand-icon">⚠️</span>
+        <span id="toastMsg"></span>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="tech-dictionary.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

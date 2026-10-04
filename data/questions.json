@@ -1,0 +1,257 @@
+{
+  "categories": [
+    {
+      "name": "JavaScript基础",
+      "questions": [
+        {
+          "question": "什么是闭包？",
+          "answer": "闭包是指有权访问另一个函数作用域中的变量的函数。创建闭包的常见方式，就是在一个函数内部创建另一个函数。闭包可以让你在函数外部访问函数内部的变量，即使外部函数已经执行完毕。"
+        },
+        {
+          "question": "JavaScript中的this指向什么？",
+          "answer": "this的指向取决于函数的调用方式：1. 全局调用时指向window/global；2. 作为对象方法调用时指向该对象；3. 使用call/apply/bind时可以指定this；4. 箭头函数中的this继承自外层作用域。"
+        },
+        {
+          "question": "什么是原型链？",
+          "answer": "原型链是JavaScript实现继承的主要方式。每个对象都有一个内部属性[[Prototype]]指向其原型对象，原型对象也有自己的原型，这样层层链接就形成了原型链。当访问对象的属性时，会沿着原型链向上查找。"
+        },
+        {
+          "question": "Promise是什么？",
+          "answer": "Promise是异步编程的一种解决方案，代表一个异步操作的最终完成或失败。Promise有三种状态：pending（进行中）、fulfilled（已成功）和rejected（已失败）。它解决了回调地狱问题，使异步代码更易读和维护。"
+        },
+        {
+          "question": "async/await是什么？",
+          "answer": "async/await是Promise的语法糖，让异步代码看起来像同步代码。async函数返回一个Promise，await可以暂停async函数的执行，等待Promise解决。它使异步代码更易读、更易调试。"
+        },
+        {
+          "question": "深拷贝和浅拷贝的区别？",
+          "answer": "浅拷贝只复制对象的第一层属性，如果属性值是对象，则复制引用；深拷贝会递归复制所有层级的属性，创建完全独立的新对象。浅拷贝可用Object.assign或展开运算符，深拷贝可用JSON.parse(JSON.stringify())或递归实现。"
+        },
+        {
+          "question": "事件委托是什么？",
+          "answer": "事件委托是利用事件冒泡机制，将事件处理程序添加到父元素上，而不是每个子元素上。当子元素触发事件时，事件会冒泡到父元素，由父元素统一处理。这样可以减少内存占用，动态添加的子元素也能响应事件。"
+        },
+        {
+          "question": "什么是防抖和节流？",
+          "answer": "防抖（debounce）：在事件触发后等待一段时间，如果期间没有再次触发才执行函数。适用于搜索框输入等场景。节流（throttle）：在一定时间内只执行一次函数。适用于滚动事件、resize等高频触发场景。"
+        },
+        {
+          "question": "ES6新特性有哪些？",
+          "answer": "ES6主要新特性：1. let/const声明变量；2. 箭头函数；3. 模板字符串；4. 解构赋值；5. 扩展运算符；6. Promise；7. class类；8. 模块化import/export；9. Map/Set数据结构；10. 默认参数；11. Proxy/Reflect等。"
+        },
+        {
+          "question": "var、let、const的区别？",
+          "answer": "var：函数作用域，存在变量提升，可以重复声明；let：块级作用域，不存在变量提升，不能重复声明；const：块级作用域，声明时必须初始化，不能重新赋值（但对象属性可以修改）。"
+        }
+      ]
+    },
+    {
+      "name": "React",
+      "questions": [
+        {
+          "question": "什么是虚拟DOM？",
+          "answer": "虚拟DOM是真实DOM的轻量级JavaScript对象表示。React使用虚拟DOM来提高性能：当状态变化时，React先更新虚拟DOM，然后通过Diff算法比较新旧虚拟DOM的差异，最后只更新需要变化的真实DOM部分。"
+        },
+        {
+          "question": "React的生命周期有哪些？",
+          "answer": "React组件生命周期分为三个阶段：1. 挂载阶段：constructor、getDerivedStateFromProps、render、componentDidMount；2. 更新阶段：getDerivedStateFromProps、shouldComponentUpdate、render、getSnapshotBeforeUpdate、componentDidUpdate；3. 卸载阶段：componentWillUnmount。"
+        },
+        {
+          "question": "什么是Hooks？",
+          "answer": "Hooks是React 16.8引入的新特性，让你在函数组件中使用状态和其他React特性。常用的Hooks包括：useState（状态管理）、useEffect（副作用处理）、useContext（上下文）、useRef（引用）、useMemo（记忆化）等。"
+        },
+        {
+          "question": "useEffect的作用是什么？",
+          "answer": "useEffect用于在函数组件中执行副作用操作，如数据获取、订阅、手动修改DOM等。它相当于class组件中的componentDidMount、componentDidUpdate和componentWillUnmount的组合。可以通过返回清理函数来执行清理操作。"
+        },
+        {
+          "question": "React的Diff算法原理？",
+          "answer": "React Diff算法基于三个假设：1. 不同类型的元素会产生不同的树；2. 开发者可以通过key属性提示哪些子元素是稳定的。Diff过程：首先比较根节点类型，如果不同直接替换；如果相同则比较属性，然后递归比较子节点。时间复杂度从O(n³)优化到O(n)。"
+        },
+        {
+          "question": "什么是高阶组件HOC？",
+          "answer": "高阶组件是一个函数，接收一个组件并返回一个新组件。HOC用于复用组件逻辑，如权限控制、数据获取、日志记录等。注意HOC不会修改原组件，而是返回包装后的新组件。"
+        },
+        {
+          "question": "Redux的工作原理？",
+          "answer": "Redux是JavaScript状态管理库，核心概念：1. Store：存储整个应用状态；2. Action：描述发生了什么的普通对象；3. Reducer：纯函数，根据Action更新状态。数据流：View -> Action -> Reducer -> Store -> View。"
+        },
+        {
+          "question": "React性能优化方法？",
+          "answer": "React性能优化：1. 使用React.memo避免不必要的重渲染；2. 使用useMemo缓存计算结果；3. 使用useCallback缓存函数引用；4. 虚拟列表处理大数据；5. 代码分割和懒加载；6. 避免在render中创建新对象/函数；7. 使用shouldComponentUpdate或PureComponent。"
+        }
+      ]
+    },
+    {
+      "name": "Vue",
+      "questions": [
+        {
+          "question": "Vue的双向绑定原理是什么？",
+          "answer": "Vue 2使用Object.defineProperty()对数据对象进行劫持，当数据变化时通知依赖更新。Vue 3使用Proxy代理整个对象，可以监听更多操作。配合发布-订阅模式，实现数据变化自动更新视图。"
+        },
+        {
+          "question": "Vue的生命周期钩子有哪些？",
+          "answer": "Vue组件生命周期：beforeCreate、created（数据观测完成）、beforeMount、mounted（DOM挂载完成）、beforeUpdate、updated（数据更新完成）、beforeDestroy/BeforeUnmount、destroyed/unmounted（组件销毁完成）。"
+        },
+        {
+          "question": "computed和watch的区别？",
+          "answer": "computed是计算属性，基于依赖缓存，只有依赖变化时才重新计算，适合简单的数据转换；watch是侦听器，当数据变化时执行回调，适合执行异步或开销较大的操作。"
+        },
+        {
+          "question": "Vue的组件通信方式？",
+          "answer": "Vue组件通信：1. props/$emit父子通信；2. $parent/$children；3. $refs；4. provide/inject跨级通信；5. eventBus事件总线；6. Vuex/Pinia状态管理；7. $attrs/$listeners；8. v-model双向绑定。"
+        },
+        {
+          "question": "Vuex的核心概念？",
+          "answer": "Vuex是Vue的状态管理模式，核心概念：1. State：存储应用状态；2. Getter：计算属性；3. Mutation：同步修改状态的唯一方式；4. Action：异步操作，提交mutation；5. Module：模块化管理状态。"
+        },
+        {
+          "question": "Vue 3的新特性？",
+          "answer": "Vue 3主要新特性：1. Composition API组合式API；2. 使用Proxy替代Object.defineProperty实现响应式；3. 性能提升，包体积减小；4. Fragment、Teleport、Suspense新组件；5. 更好的TypeScript支持；6. 全局API修改。"
+        }
+      ]
+    },
+    {
+      "name": "CSS",
+      "questions": [
+        {
+          "question": "什么是盒模型？",
+          "answer": "CSS盒模型包括：content（内容）、padding（内边距）、border（边框）、margin（外边距）。标准盒模型中，width/height只包含content；IE盒模型中，width/height包含content+padding+border。可以通过box-sizing属性切换。"
+        },
+        {
+          "question": "Flex布局是什么？",
+          "answer": "Flexbox是CSS3引入的弹性盒子布局，用于一维布局。主要属性：容器属性包括flex-direction、justify-content、align-items、flex-wrap等；项目属性包括flex-grow、flex-shrink、flex-basis、align-self等。"
+        },
+        {
+          "question": "如何实现水平垂直居中？",
+          "answer": "常见方法：1. Flex布局：display:flex; justify-content:center; align-items:center；2. Grid布局：display:grid; place-items:center；3. 绝对定位+transform；4. 绝对定位+margin:auto；5. table-cell布局。"
+        },
+        {
+          "question": "BFC是什么？",
+          "answer": "BFC（块级格式化上下文）是Web页面的可视化CSS渲染的一部分，是布局过程中生成块级盒子的区域。触发BFC的条件：根元素、float不为none、position为absolute或fixed、display为inline-block/table-cell/flex、overflow不为visible。BFC可以解决外边距重叠、清除浮动、防止文字环绕等问题。"
+        },
+        {
+          "question": "CSS选择器优先级？",
+          "answer": "CSS选择器优先级（权重）：!important > 内联样式(1000) > ID选择器(100) > 类选择器/属性选择器/伪类(10) > 元素选择器/伪元素(1) > 通配符(0)。当优先级相同时，后声明的样式会覆盖先声明的样式。"
+        }
+      ]
+    },
+    {
+      "name": "Node.js",
+      "questions": [
+        {
+          "question": "Node.js的事件循环机制是什么？",
+          "answer": "Node.js使用libuv实现事件循环，主要阶段：timers（执行setTimeout/setInterval回调）、pending callbacks（执行系统操作回调）、idle/prepare（内部使用）、poll（获取新的I/O事件）、check（执行setImmediate回调）、close callbacks（执行close事件回调）。process.nextTick在每次阶段切换时执行。"
+        },
+        {
+          "question": "CommonJS和ES Module的区别？",
+          "answer": "CommonJS使用require/module.exports，运行时加载，同步加载，值拷贝；ES Module使用import/export，编译时加载，异步加载，值引用（只读）。Node.js同时支持两种模块系统，但ES Module是未来的标准。"
+        },
+        {
+          "question": "什么是Stream？",
+          "answer": "Stream是Node.js中处理流式数据的抽象接口，用于处理大量数据或持续产生的数据。四种类型：Readable（可读）、Writable（可写）、Duplex（双工）、Transform（转换）。Stream使用事件驱动，可以高效处理大文件而不占用大量内存。"
+        },
+        {
+          "question": "Buffer是什么？",
+          "answer": "Buffer是Node.js中用于处理二进制数据的类。JavaScript字符串是UTF-16编码的，而Buffer是原始二进制数据。Buffer在文件I/O、网络通信、加密等场景中广泛使用。创建Buffer的方式：Buffer.from()、Buffer.alloc()、Buffer.allocUnsafe()。"
+        },
+        {
+          "question": "Koa和Express的区别？",
+          "answer": "Express和Koa都是Node.js的Web框架。Express使用回调函数和中间件，功能丰富但代码可能冗长；Koa由Express原班人马打造，使用async/await和洋葱模型中间件，更轻量、更现代。Koa不包含内置的中间件，需要手动引入。"
+        }
+      ]
+    },
+    {
+      "name": "HTTP与网络",
+      "questions": [
+        {
+          "question": "HTTP状态码有哪些？",
+          "answer": "常见状态码：1xx（信息性状态码）、2xx（成功，如200 OK、201 Created）、3xx（重定向，如301 Moved Permanently、302 Found）、4xx（客户端错误，如400 Bad Request、401 Unauthorized、403 Forbidden、404 Not Found）、5xx（服务器错误，如500 Internal Server Error、502 Bad Gateway、503 Service Unavailable）。"
+        },
+        {
+          "question": "什么是跨域？如何解决？",
+          "answer": "跨域是浏览器的同源策略限制，协议、域名、端口任一不同即跨域。解决方法：1. CORS（跨域资源共享，服务器设置Access-Control-Allow-Origin）；2. JSONP（只支持GET）；3. 代理服务器；4. postMessage；5. WebSocket。"
+        },
+        {
+          "question": "GET和POST的区别？",
+          "answer": "GET：参数在URL中，有长度限制，幂等，可缓存，用于获取数据；POST：参数在body中，无长度限制，非幂等，不可缓存，用于提交数据。GET是安全的（不修改服务器状态），POST可能修改服务器状态。"
+        },
+        {
+          "question": "TCP三次握手过程？",
+          "answer": "TCP三次握手：1. 客户端发送SYN包到服务器，进入SYN_SENT状态；2. 服务器收到SYN包，发送SYN+ACK包，进入SYN_RECV状态；3. 客户端收到SYN+ACK包，发送ACK包，双方进入ESTABLISHED状态。三次握手目的是确认双方的收发能力正常。"
+        },
+        {
+          "question": "HTTPS的工作原理？",
+          "answer": "HTTPS在HTTP和TCP之间加入了SSL/TLS层。工作流程：1. 客户端向服务器发送HTTPS请求；2. 服务器返回证书（包含公钥）；3. 客户端验证证书，生成随机对称密钥，用公钥加密后发送给服务器；4. 服务器用私钥解密获取对称密钥；5. 双方使用对称密钥加密通信。"
+        },
+        {
+          "question": "什么是CDN？",
+          "answer": "CDN（内容分发网络）是通过在全球部署边缘节点，将网站内容缓存到离用户最近的服务器，从而加速内容传输的技术。CDN可以加速静态资源加载、减轻源站压力、提高网站可用性和安全性。"
+        }
+      ]
+    },
+    {
+      "name": "算法与数据结构",
+      "questions": [
+        {
+          "question": "快速排序的原理是什么？",
+          "answer": "快速排序采用分治策略：1. 选择一个基准元素；2. 将数组分为两部分，小于基准的放左边，大于基准的放右边；3. 递归地对左右两部分进行快速排序。平均时间复杂度O(n log n)，最坏情况O(n²)，空间复杂度O(log n)。"
+        },
+        {
+          "question": "什么是二叉树？",
+          "answer": "二叉树是每个节点最多有两个子树的树结构。常见类型：满二叉树（所有叶子节点在同一层）、完全二叉树（除最后一层外都是满的，最后一层叶子靠左）、二叉搜索树（左子树所有节点值小于根节点，右子树大于根节点）、平衡二叉树（左右子树高度差不超过1）。"
+        },
+        {
+          "question": "冒泡排序和选择排序的区别？",
+          "answer": "冒泡排序：相邻元素两两比较，大的往后冒泡，每轮确定一个最大元素的位置，时间复杂度O(n²)，稳定排序。选择排序：每轮选择最小元素放到已排序序列末尾，时间复杂度O(n²)，不稳定排序。两者都是简单排序，适合小规模数据。"
+        },
+        {
+          "question": "什么是哈希表？",
+          "answer": "哈希表（散列表）是根据键直接访问内存存储位置的数据结构。通过哈希函数将键映射到数组的某个位置。处理哈希冲突的方法：开放寻址法（线性探测、二次探测）、链地址法（每个位置维护一个链表）。理想情况下查找、插入、删除的时间复杂度都是O(1)。"
+        },
+        {
+          "question": "栈和队列的区别？",
+          "answer": "栈（Stack）是后进先出（LIFO）的数据结构，只能在一端进行插入和删除操作。队列（Queue）是先进先出（FIFO）的数据结构，在一端插入，在另一端删除。栈常用于函数调用、表达式求值、括号匹配；队列常用于任务调度、广度优先搜索。"
+        }
+      ]
+    },
+    {
+      "name": "前端工程化",
+      "questions": [
+        {
+          "question": "Webpack的作用是什么？",
+          "answer": "Webpack是前端模块打包工具，主要功能：1. 模块打包：将各种资源（JS、CSS、图片等）视为模块并打包；2. 代码转换：通过Loader转换非JS文件；3. 代码优化：压缩、 Tree Shaking、代码分割；4. 开发工具：热更新、Source Map等。"
+        },
+        {
+          "question": "什么是Tree Shaking？",
+          "answer": "Tree Shaking是删除未引用代码的优化技术。基于ES Module的静态结构，在编译时就能确定模块的依赖关系，从而移除未使用的导出。需要配合ES Module使用，CommonJS不支持。Webpack和Rollup都支持Tree Shaking。"
+        },
+        {
+          "question": "Babel的作用？",
+          "answer": "Babel是JavaScript编译器，主要功能：1. 语法转换：将ES6+代码转换为兼容的ES5代码；2. Polyfill：通过core-js添加缺失的特性；3. JSX转换：将JSX转换为React.createElement调用；4. 源码转换：支持各种插件进行代码转换。"
+        },
+        {
+          "question": "Git常用命令有哪些？",
+          "answer": "Git常用命令：git init（初始化仓库）、git clone（克隆仓库）、git add（添加文件到暂存区）、git commit（提交更改）、git push（推送到远程）、git pull（拉取远程更新）、git branch（分支操作）、git merge（合并分支）、git stash（暂存更改）、git log（查看提交历史）。"
+        }
+      ]
+    },
+    {
+      "name": "TypeScript",
+      "questions": [
+        {
+          "question": "TypeScript和JavaScript的区别？",
+          "answer": "TypeScript是JavaScript的超集，添加了静态类型系统。主要区别：1. TypeScript有类型检查，可以在编译时发现错误；2. 支持接口、泛型、枚举等高级特性；3. 需要编译成JavaScript才能运行；4. 更好的IDE支持和代码提示。"
+        },
+        {
+          "question": "什么是泛型？",
+          "answer": "泛型（Generics）是允许在定义函数、接口或类时不指定具体类型，而在使用时再指定类型的特性。泛型提供了类型安全的同时保持了代码的灵活性。例如：function identity<T>(arg: T): T { return arg; }"
+        },
+        {
+          "question": "interface和type的区别？",
+          "answer": "interface和type都可以定义对象类型，主要区别：1. interface可以重复声明并自动合并，type不行；2. type可以定义联合类型、交叉类型、元组等，interface不行；3. interface支持继承（extends），type使用交叉类型（&）实现类似功能。"
+        }
+      ]
+    }
+  ]
+}
